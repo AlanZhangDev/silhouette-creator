@@ -1,0 +1,8 @@
+#canvas {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.square {
+    background-color: black;
+}
