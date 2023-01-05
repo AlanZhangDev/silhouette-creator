@@ -1,8 +1,10 @@
 let rows = 16;
 let cols = 16;
-let cellSize = 10;
-let width = rows * cellSize;
-let height = cols * cellSize;
+let width = 256;
+let height = 256;
+
+let cellWidth = (width / rows);
+let cellHeight = (height / rows);
 
 function paintCell() {
     this.classList.add('painted');
@@ -17,7 +19,7 @@ function createCanvas() {
         for (let c = 0; c < cols; c++) {
             const square = document.createElement('div');
             square.classList.add('square');
-            square.setAttribute('style', `width: ${cellSize}px; height: ${cellSize}px;`);
+            square.setAttribute('style', `width: ${cellWidth}px; height: ${cellHeight}px;`);
             square.addEventListener('mouseover', paintCell);
             canvas.appendChild(square);
         }
@@ -36,8 +38,8 @@ function defineGridSize() {
     if (size < 100) {
         rows = size;
         cols = size;
-        width = rows * cellSize;
-        height = cols * cellSize;
+        cellWidth = (width / rows);
+        cellHeight = (height / rows);
     }
     deleteCanvas();
     createCanvas();
