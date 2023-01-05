@@ -6,3 +6,7 @@
 .square {
     background-color: black;
 }
+
+.square.painted {
+    background-color: white;
+}
